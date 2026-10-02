@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Oro Plastindo | Solusi Kemasan Plastik Primer AMDK</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#003366',
+                            blue: '#004B87',
+                            cyan: '#00A8CC',
+                            teal: '#0099B8',
+                            dark: '#0F172A',
+                            light: '#F8FAFC',
+                            slate: '#64748B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Glassmorphism & Keyframe CSS -->
+    <style>
+        .logo-container {
+    width: 2.5rem; /* w-10 */
+    height: 2.5rem; /* h-10 */
+    border-radius: 0.5rem; /* rounded-lg */
+    overflow: hidden; /* Memastikan gambar tidak keluar dari kotak */
+    display: flex; /* items-center justify-center */
+    align-items: center;
+    justify-content: center;
+    background-color: transparent; /* Menggunakan variabel warna untuk konsistensi */
+    box-shadow: none; /* shadow-md */
+    transition: background-color 0.3s ease; /* transition-colors */
+  }
+
+  /* Efek hover untuk background-color container */
+  .logo-container:hover {
+    background-color: transparent; /* group-hover:bg-brand-cyan */
+  }
+
+  .logo-image {
+    max-width: 90%; /* Menyesuaikan ukuran gambar agar pas di dalam kotak */
+    max-height: 90%;
+    object-fit: contain; /* Mempertahankan rasio aspek gambar */
+  }
+
+  /* Definisikan variabel warna jika belum ada */
+  :root {
+    --brand-navy: #0a1f44; /* Ganti dengan kode warna navy Anda */
+    --brand-cyan: #00bcd4; /* Ganti dengan kode warna cyan Anda */
+  }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F8FAFC;
+            color: #0F172A;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.88) 0%, rgba(15, 23, 42, 0.75) 100%);
+        }
+
+        .gradient-card {
+            background: linear-gradient(145deg, #ffffff, #f1f5f9);
+            box-shadow: 0 10px 25px -5px rgba(0, 51, 102, 0.05);
+        }
+
+        .counter-card {
+            background: linear-gradient(135deg, #003366 0%, #001f3f 100%);
+        }
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background: #00A8CC;
+            transform: translateX(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 20px;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #003366;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00A8CC;
+        }
+
+        /* Modal Animation */
+        .modal-animate {
+            animation: fadeIn 0.25s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-cyan selection:text-white">
+
+<!-- Top Bar -->
+<header id="top-bar" class="bg-brand-dark text-slate-300 text-xs py-2 px-4 md:px-8 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+        <div class="flex flex-wrap items-center gap-4 sm:gap-6 justify-center md:justify-start">
+            <a href="tel:02666721388" class="hover:text-brand-cyan transition"><i class="fa-solid fa-phone text-brand-cyan mr-1.5"></i>(0266) 6721388</a>
+            <a href="mailto:legal@oroplastindo.com" class="hover:text-brand-cyan transition"><i class="fa-solid fa-envelope text-brand-cyan mr-1.5"></i>legal@oroplastindo.com</a>
+            <span class="hidden lg:inline-block"><i class="fa-solid fa-location-dot text-brand-cyan mr-1.5"></i>Sukabumi (Pabrik) & Kemayoran (Marketing)</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2">
+                <button onclick="setLanguage('ID')" id="lang-id" class="font-bold text-white hover:text-brand-cyan transition underline underline-offset-4">ID</button>
+                <span class="text-slate-500">|</span>
+                <button onclick="setLanguage('EN')" id="lang-en" class="hover:text-brand-cyan transition text-slate-400">EN</button>
+            </div>
+            <div class="h-3 w-[1px] bg-slate-700"></div>
+            <div class="flex items-center space-x-3 text-sm">
+                <a href="#" class="hover:text-brand-cyan transition" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-brand-cyan transition" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-brand-cyan transition" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Header / Navigation -->
+<nav id="navbar" class="sticky top-0 z-40 w-full glass-nav border-b border-slate-200/80 transition-all duration-300 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="logo-container group">
+                    <img src="images/logo.png" alt="Logo Oro Plastindo" class="logo-image transition-all duration-300">
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-wider text-brand-navy block leading-none">ORO PLASTINDO</span>
+                    <span class="text-[10px] uppercase tracking-widest text-brand-navy font-bold block mt-1">PT. ORO PLASTINDO INDONESIA</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-7 font-medium text-sm text-slate-700">
+                <a href="#beranda" class="hover:text-brand-navy transition py-2 border-b-2 border-transparent hover:border-brand-cyan">Beranda</a>
+                <a href="#tentang" class="hover:text-brand-navy transition py-2 border-b-2 border-transparent hover:border-brand-cyan">Tentang Kami</a>
+                <a href="#produk" class="hover:text-brand-navy transition py-2 border-b-2 border-transparent hover:border-brand-cyan">Produk</a>
+                <a href="#manajemen" class="hover:text-brand-navy transition py-2 border-b-2 border-transparent hover:border-brand-cyan">Manajemen Mutu</a>
+                <a href="#klien" class="hover:text-brand-navy transition py-2 border-b-2 border-transparent hover:border-brand-cyan">Klien</a>
+                <a href="#media" class="hover:text-brand-navy transition py-2 border-b-2 border-transparent hover:border-brand-cyan">Media & CSR</a>
+                <a href="#karir" class="hover:text-brand-navy transition py-2 border-b-2 border-transparent hover:border-brand-cyan">Karir</a>
+            </div>
+
+            <!-- CTA & Mobile Toggle -->
+            <div class="flex items-center space-x-4">
+                <a href="#kontak" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-brand-navy text-white text-xs font-bold uppercase tracking-wider hover:bg-brand-cyan transition shadow-md hover:shadow-lg">
+                    <span>Hubungi Kami</span>
+                    <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+
+                <button id="mobile-menu-btn" class="lg:hidden text-brand-navy text-2xl focus:outline-none p-2" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+        <a href="#beranda" class="block py-2 text-slate-700 hover:text-brand-navy font-medium border-b border-slate-100">Beranda</a>
+        <a href="#tentang" class="block py-2 text-slate-700 hover:text-brand-navy font-medium border-b border-slate-100">Tentang Kami</a>
+        <a href="#produk" class="block py-2 text-slate-700 hover:text-brand-navy font-medium border-b border-slate-100">Produk & Layanan</a>
+        <a href="#manajemen" class="block py-2 text-slate-700 hover:text-brand-navy font-medium border-b border-slate-100">Manajemen Mutu</a>
+        <a href="#klien" class="block py-2 text-slate-700 hover:text-brand-navy font-medium border-b border-slate-100">Klien & Mitra</a>
+        <a href="#media" class="block py-2 text-slate-700 hover:text-brand-navy font-medium border-b border-slate-100">Media & CSR</a>
+        <a href="#karir" class="block py-2 text-slate-700 hover:text-brand-navy font-medium border-b border-slate-100">Karir</a>
+        <a href="#kontak" class="block text-center py-3 bg-brand-navy text-white font-bold rounded-lg mt-4">Hubungi Kami</a>
+    </div>
+</nav>
+
+<!-- Hero Section / Carousel -->
+<section id="beranda" class="relative bg-brand-dark min-h-[580px] md:min-h-[660px] flex items-center overflow-hidden">
+    
+    <!-- Hero Slider Container -->
+    <div id="hero-slider" class="absolute inset-0 w-full h-full">
+        <!-- Slide 1 -->
+        <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100 bg-cover bg-center"
+             style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80');">
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 bg-cover bg-center"
+             style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80');">
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 bg-cover bg-center"
+             style="background-image: url('https://images.unsplash.com/photo-1616803140344-6682afb13cda?auto=format&fit=crop&w=1920&q=80');">
+        </div>
+    </div>
+
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 hero-overlay z-10"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white">
+        <div class="max-w-3xl space-y-6">
+            <div class="inline-flex items-center space-x-2 bg-brand-cyan/20 border border-brand-cyan/40 px-3 py-1.5 rounded-full text-brand-cyan text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
+                <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
+                <span>Pabrik Kemasan AMDK Presisi Tinggi</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                SINERGI TERBAIK PRODUKSI KEMASAN PLASTIK <span class="text-brand-cyan">BERTEKNOLOGI MUTAKHIR</span>
+            </h1>
+            
+            <p class="text-slate-200 text-base sm:text-lg font-light leading-relaxed">
+                PT Oro Plastindo mendukung kebutuhan kemasan primer Air Minum Dalam Kemasan (AMDK) melalui proses manufaktur modern, pengawasan mutu konsisten, dan dukungan teknis responsif sejak 2010.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                <a href="#produk" class="px-8 py-4 bg-brand-cyan hover:bg-teal-500 text-white font-bold text-sm uppercase tracking-wider rounded-lg transition text-center shadow-lg hover:shadow-cyan-500/20">
+                    Eksplorasi Produk <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#kontak" class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold text-sm uppercase tracking-wider rounded-lg backdrop-blur-md transition text-center">
+                    Hubungi Tim Sales
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slider Pagination Controls -->
+    <div class="absolute bottom-8 right-8 z-30 flex items-center space-x-3">
+        <button onclick="changeSlide(0)" class="slide-dot w-3 h-3 rounded-full bg-white transition-all duration-300"></button>
+        <button onclick="changeSlide(1)" class="slide-dot w-3 h-3 rounded-full bg-white/40 transition-all duration-300"></button>
+        <button onclick="changeSlide(2)" class="slide-dot w-3 h-3 rounded-full bg-white/40 transition-all duration-300"></button>
+    </div>
+</section>
+
+<!-- Fact Sheet / Counter Section (Dynapack Style) -->
+<section class="relative z-30 -mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="counter-card rounded-2xl p-8 text-white shadow-2xl border border-white/10">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+            
+            <div class="p-2">
+                <div class="text-3xl lg:text-4xl font-extrabold text-brand-cyan mb-1">
+                    <span class="counter" data-target="15">0</span>+
+                </div>
+                <div class="text-xs uppercase tracking-wider font-medium text-slate-300">Tahun Pengalaman</div>
+                <div class="text-[10px] text-slate-400 mt-1">Sejak 2010 di Sukabumi</div>
+            </div>
+
+            <div class="p-2 pt-6 md:pt-2">
+                <div class="text-3xl lg:text-4xl font-extrabold text-brand-cyan mb-1">
+                    <span class="counter" data-target="26">0</span>,000+
+                </div>
+                <div class="text-xs uppercase tracking-wider font-medium text-slate-300">m² Area Produksi</div>
+                <div class="text-[10px] text-slate-400 mt-1">Fasilitas Parung Kuda</div>
+            </div>
+
+            <div class="p-2 pt-6 md:pt-2">
+                <div class="text-3xl lg:text-4xl font-extrabold text-brand-cyan mb-1">
+                    <span class="counter" data-target="5">0</span>+
+                </div>
+                <div class="text-xs uppercase tracking-wider font-medium text-slate-300">Lini Produk Utama</div>
+                <div class="text-[10px] text-slate-400 mt-1">Preform, Botol, Galon & Tutup</div>
+            </div>
+
+            <div class="p-2 pt-6 md:pt-2">
+                <div class="text-3xl lg:text-4xl font-extrabold text-brand-cyan mb-1">
+                    <span class="counter" data-target="10">0</span>+
+                </div>
+                <div class="text-xs uppercase tracking-wider font-medium text-slate-300">Brand AMDK Ternama</div>
+                <div class="text-[10px] text-slate-400 mt-1">Mitra Industri Terkemuka</div>
+            </div>
+
+            <div class="p-2 pt-6 md:pt-2 col-span-2 md:col-span-1">
+                <div class="text-3xl lg:text-4xl font-extrabold text-brand-cyan mb-1">
+                    <span class="counter" data-target="100">0</span>%
+                </div>
+                <div class="text-xs uppercase tracking-wider font-medium text-slate-300">Sertifikasi Keamanan</div>
+                <div class="text-[10px] text-slate-400 mt-1">ISO 9001:2015 & SJH Halal</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- About Us & Timeline Section -->
+<section id="tentang" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-2">Tentang PT Oro Plastindo</h2>
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-brand-navy">Solusi Integratif Kemasan Plastik AMDK</h3>
+            <div class="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
+            <p class="mt-6 text-slate-600 leading-relaxed text-sm sm:text-base">
+                Berdiri sejak tahun 2010 di Kabupaten Sukabumi, Jawa Barat, PT Oro Plastindo telah tumbuh menjadi manufaktur kemasan plastik primer terpercaya. Kami menerapkan standar manajemen mutu internasional untuk menjamin setiap botol, galon, preform, dan tutup botol memenuhi regulasi keamanan pangan nasional maupun global.
+            </p>
+        </div>
+
+        <!-- Two Column Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80" 
+                     alt="Pabrik Oro Plastindo Sukabumi" 
+                     class="w-full h-96 object-cover hover:scale-105 transition duration-500">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-navy p-6 text-white">
+                    <h4 class="font-bold text-lg">Pabrik & Pusat Produksi Sukabumi</h4>
+                    <p class="text-xs text-slate-300 mt-1">Jl. Cidahu No. 68 Kp. Pondokkaso, Babakanjaya, Parung Kuda</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                    <div class="p-3 bg-brand-navy/5 text-brand-navy rounded-xl text-xl flex-shrink-0">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-lg">Presisi Injeksi & Blow Molding</h4>
+                        <p class="text-sm text-slate-600 mt-1">Menggunakan mesin otomatis mutakhir dengan tingkat akurasi berat dan dimensi ketat demi mencegah kebocoran.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="p-3 bg-brand-navy/5 text-brand-navy rounded-xl text-xl flex-shrink-0">
+                        <i class="fa-solid fa-shield-virus"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-lg">Hygienic Cleanroom Environment</h4>
+                        <p class="text-sm text-slate-600 mt-1">Seluruh rantai produksi disesuaikan dengan standar pengolahan pangan hygiene (Food Grade Material).</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="p-3 bg-brand-navy/5 text-brand-navy rounded-xl text-xl flex-shrink-0">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-lg">Layanan Teknis & Distribusi Cepat</h4>
+                        <p class="text-sm text-slate-600 mt-1">Dukungan teknis responsif di lapangan dan sistem rantai pasok terintegrasi untuk menjamin kelancaran produksi mitra.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- History Timeline (Interactive Milestone) -->
+        <div class="bg-slate-50 rounded-3xl p-8 sm:p-12 border border-slate-200/80">
+            <h3 class="text-2xl font-bold text-brand-navy text-center mb-12">Jejak Langkah & Perkembangan</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                
+                <!-- Milestone 1 -->
+                <div class="relative group">
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg hover:border-brand-navy transition-all duration-300 h-full flex flex-col">
+                        <div class="w-12 h-12 rounded-full bg-brand-navy text-white flex items-center justify-center text-lg mb-4 flex-shrink-0">
+                            <i class="fa-solid fa-building text-sm"></i>
+                        </div>
+                        <span class="text-sm font-extrabold text-brand-navy mb-1">2010</span>
+                        <h5 class="font-bold text-slate-800 text-sm mb-2">Pendirian Perusahaan</h5>
+                        <p class="text-xs text-slate-600 leading-relaxed flex-grow">Resmi berdirinya PT Oro Plastindo di Parung Kuda, Kabupaten Sukabumi.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 2 -->
+                <div class="relative group">
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg hover:border-brand-navy transition-all duration-300 h-full flex flex-col">
+                        <div class="w-12 h-12 rounded-full bg-brand-navy text-white flex items-center justify-center text-lg mb-4 flex-shrink-0">
+                            <i class="fa-solid fa-bottle-water text-sm"></i>
+                        </div>
+                        <span class="text-sm font-extrabold text-brand-navy mb-1">2011</span>
+                        <h5 class="font-bold text-slate-800 text-sm mb-2">Produksi Galon PC</h5>
+                        <p class="text-xs text-slate-600 leading-relaxed flex-grow">Memulai produksi Galon PC 5 Galon berketahanan benturan tinggi.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 3 -->
+                <div class="relative group">
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg hover:border-brand-navy transition-all duration-300 h-full flex flex-col">
+                        <div class="w-12 h-12 rounded-full bg-brand-navy text-white flex items-center justify-center text-lg mb-4 flex-shrink-0">
+                            <i class="fa-solid fa-wine-bottle text-sm"></i>
+                        </div>
+                        <span class="text-sm font-extrabold text-brand-navy mb-1">2015</span>
+                        <h5 class="font-bold text-slate-800 text-sm mb-2">Inovasi Tutup Galon</h5>
+                        <p class="text-xs text-slate-600 leading-relaxed flex-grow">Ekspansi lini manufaktur Tutup Galon Injection Polyethylene.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 4 -->
+                <div class="relative group">
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg hover:border-brand-navy transition-all duration-300 h-full flex flex-col">
+                        <div class="w-12 h-12 rounded-full bg-brand-navy text-white flex items-center justify-center text-lg mb-4 flex-shrink-0">
+                            <i class="fa-solid fa-gears text-sm"></i>
+                        </div>
+                        <span class="text-sm font-extrabold text-brand-navy mb-1">2016</span>
+                        <h5 class="font-bold text-slate-800 text-sm mb-2">Preform PET & Closure</h5>
+                        <p class="text-xs text-slate-600 leading-relaxed flex-grow">Investasi mesin Preform PET modern dan Tutup Botol HDPE presisi.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 5 -->
+                <div class="relative group">
+                    <div class="bg-gradient-to-br from-brand-navy to-slate-900 text-white rounded-2xl p-6 border border-brand-navy/50 shadow-sm hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                        <div class="w-12 h-12 rounded-full bg-white text-brand-navy flex items-center justify-center text-lg mb-4 flex-shrink-0">
+                            <i class="fa-solid fa-award text-sm"></i>
+                        </div>
+                        <span class="text-sm font-extrabold mb-1">2017 - Sekarang</span>
+                        <h5 class="font-bold text-sm mb-2">Botol PET & Sertifikasi</h5>
+                        <p class="text-xs text-slate-300 leading-relaxed flex-grow">Peluncuran Botol PET 600ml dan pencapaian ISO 9001:2015 & Halal.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Products & Services Section -->
+<section id="produk" class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-2">Portofolio Produk Kami</h2>
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-brand-navy">Katalog Kemasan Plastik Primer AMDK</h3>
+            <div class="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
+            <p class="mt-4 text-slate-600 text-sm">Pilih kategori di bawah ini untuk menjelajahi spesifikasi teknis varian kemasan kami.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 mb-12">
+            <button onclick="filterProducts('all')" class="prod-tab-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-navy text-white transition shadow-sm" data-category="all">Semua Produk</button>
+            <button onclick="filterProducts('preform')" class="prod-tab-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-slate-700 hover:bg-slate-200 transition border border-slate-200" data-category="preform">PET Preform</button>
+            <button onclick="filterProducts('closure')" class="prod-tab-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-slate-700 hover:bg-slate-200 transition border border-slate-200" data-category="closure">Tutup Botol (Closure)</button>
+            <button onclick="filterProducts('galon')" class="prod-tab-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-slate-700 hover:bg-slate-200 transition border border-slate-200" data-category="galon">Galon PC</button>
+            <button onclick="filterProducts('tutup-galon')" class="prod-tab-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-slate-700 hover:bg-slate-200 transition border border-slate-200" data-category="tutup-galon">Tutup Galon</button>
+            <button onclick="filterProducts('botol')" class="prod-tab-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-slate-700 hover:bg-slate-200 transition border border-slate-200" data-category="botol">Botol PET Ready</button>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+            
+            <!-- Product 1 -->
+            <div class="product-item bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="preform">
+                <div class="relative h-56 bg-slate-100 overflow-hidden flex items-center justify-center p-6">
+                    <img src="img-produk/freeform.png" alt="PET Preform AMDK" class="h-full object-contain group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-brand-navy text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">PET Material</span>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-slate-900 text-lg group-hover:text-brand-navy transition">PET Preforms Standard</h4>
+                    <p class="text-xs text-slate-500 mt-2 line-clamp-2">Bahan setengah jadi bermutu tinggi dengan kejernihan optimal dan ketebalan dinding presisi untuk blow molding botol AMDK.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-700"><i class="fa-solid fa-weight-scale text-brand-cyan mr-1"></i> Variasi: 12g - 35g</span>
+                        <button onclick="openProductModal('preform')" class="text-xs font-bold text-brand-navy hover:text-brand-cyan transition">Detail <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-item bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="closure">
+                <div class="relative h-56 bg-slate-100 overflow-hidden flex items-center justify-center p-6">
+                    <img src="img-produk/tutup-botol.jpg" alt="Tutup Botol HDPE Closure" class="h-full object-contain group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">HDPE Material</span>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-slate-900 text-lg group-hover:text-brand-navy transition">Tutup Botol (Plastic Closure)</h4>
+                    <p class="text-xs text-slate-500 mt-2 line-clamp-2">Closure HDPE kedap udara dengan tamper-evident band presisi untuk keamanan penyegelan botol air minum.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-700"><i class="fa-solid fa-ruler text-brand-cyan mr-1"></i> Standar: 28mm / 30mm</span>
+                        <button onclick="openProductModal('closure')" class="text-xs font-bold text-brand-navy hover:text-brand-cyan transition">Detail <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-item bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="galon">
+                <div class="relative h-56 bg-slate-100 overflow-hidden flex items-center justify-center p-6">
+                    <img src="img-produk/galon.png" alt="Galon Polycarbonate 5 Galon" class="h-full object-contain group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-brand-cyan text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">PC Material</span>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-slate-900 text-lg group-hover:text-brand-navy transition">Galon Polycarbonate (PC) 19L</h4>
+                    <p class="text-xs text-slate-500 mt-2 line-clamp-2">Galon 5 Galon tangguh bermaterial Polycarbonate murni, sangat tahan benturan dan bening sempurna.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-700"><i class="fa-solid fa-glass-water text-brand-cyan mr-1"></i> Kapasitas: 19 Liter</span>
+                        <button onclick="openProductModal('galon')" class="text-xs font-bold text-brand-navy hover:text-brand-cyan transition">Detail <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-item bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="tutup-galon">
+                <div class="relative h-56 bg-slate-100 overflow-hidden flex items-center justify-center p-6">
+                    <img src="img-produk/cap-galon.png" alt="Tutup Galon Hygienic" class="h-full object-contain group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-teal-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">PE Injection</span>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-slate-900 text-lg group-hover:text-brand-navy transition">Tutup Galon Hygienic Cap</h4>
+                    <p class="text-xs text-slate-500 mt-2 line-clamp-2">Tutup galon lentur anti-bocor dengan sealing foam internal bersertifikat standar higienis minuman.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-700"><i class="fa-solid fa-shield text-brand-cyan mr-1"></i> Non-Spill Seal</span>
+                        <button onclick="openProductModal('tutup-galon')" class="text-xs font-bold text-brand-navy hover:text-brand-cyan transition">Detail <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-item bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group" data-category="botol">
+                <div class="relative h-56 bg-slate-100 overflow-hidden flex items-center justify-center p-6">
+                    <img src="img-produk/botol.png" alt="Botol PET 600ml Ready" class="h-full object-contain group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-brand-navy text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">PET Finished</span>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-slate-900 text-lg group-hover:text-brand-navy transition">Botol PET Ready 600ml</h4>
+                    <p class="text-xs text-slate-500 mt-2 line-clamp-2">Botol plastik bening siap pakai ukuran standar 600ml dengan kekuatan kompresi vertikal yang optimal.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-700"><i class="fa-solid fa-box-archive text-brand-cyan mr-1"></i> Volume: 600ml / Custom</span>
+                        <button onclick="openProductModal('botol')" class="text-xs font-bold text-brand-navy hover:text-brand-cyan transition">Detail <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Solution Card -->
+            <div class="product-item bg-gradient-to-br from-brand-navy to-brand-dark text-white rounded-2xl p-8 flex flex-col justify-between shadow-xl" data-category="all">
+                <div>
+                    <span class="bg-brand-cyan text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Custom Moulding</span>
+                    <h4 class="text-2xl font-extrabold mt-4">Kebutuhan Custom Moulding / Desain Khusus?</h4>
+                    <p class="text-xs text-slate-300 mt-3 leading-relaxed">
+                        Tim R&D dan engineering PT Oro Plastindo siap membantu perancangan cetakan (moulding) khusus sesuai dengan identitas unik brand AMDK Anda.
+                    </p>
+                </div>
+                <a href="#kontak" class="mt-8 inline-block text-center py-3 bg-brand-cyan hover:bg-teal-400 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition shadow-md">
+                    Konsultasi Desain <i class="fa-solid fa-comments ml-1"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Quality & System Management Section -->
+<section id="manajemen" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-2">Komitmen Kualitas</h2>
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-brand-navy">4 Pilar Manajemen Sistem & Keamanan</h3>
+            <div class="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
+            <p class="mt-4 text-slate-600 text-sm">Menjamin standar pengolahan tertinggi untuk kemasan yang aman kontak langsung dengan bahan pangan.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Pillar 1 -->
+            <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group">
+                <div class="w-14 h-14 rounded-xl bg-brand-navy/10 text-brand-navy flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-navy group-hover:text-white transition">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 text-lg mb-2">Sistem Keamanan Pangan</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Pengujian migrasi zat & pengawasan higienitas ketat pada setiap lot kemasan primer AMDK sesuai standar BPOM.
+                </p>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group">
+                <div class="w-14 h-14 rounded-xl bg-brand-navy/10 text-brand-navy flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-navy group-hover:text-white transition">
+                    <i class="fa-solid fa-certificate"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 text-lg mb-2">Sistem Jaminan Halal (SJH)</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Penerapan penuh Sistem Jaminan Halal (LPPOM MUI & BPJPH) dalam pemilihan pelumas mesin, bahan baku, dan penyimpanan.
+                </p>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group">
+                <div class="w-14 h-14 rounded-xl bg-brand-navy/10 text-brand-navy flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-navy group-hover:text-white transition">
+                    <i class="fa-solid fa-square-check"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 text-lg mb-2">ISO 9001:2015 Certification</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Prosedur Manajemen Mutu terverifikasi internasional yang konsisten mulai dari receiving raw material hingga barang jadi.
+                </p>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group">
+                <div class="w-14 h-14 rounded-xl bg-brand-navy/10 text-brand-navy flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-navy group-hover:text-white transition">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 text-lg mb-2">Perbaikan Berkelanjutan</h4>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Continuous Improvement (Kaizen) dan pendampingan konsultasi teknis bagi efisiensi lini pengisian (filling line) pelanggan.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Trusted Clients Carousel / Grid -->
+<section id="klien" class="py-20 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        
+        <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-2">Mitra Kepercayaan Kami</h2>
+        <h3 class="text-2xl sm:text-3xl font-extrabold mb-12">Dipercaya oleh Brand Industri AMDK Terkemuka</h3>
+
+        <!-- Logo Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
+            
+            <div class="p-4 bg-slate-800/60 rounded-xl border border-slate-700/50 hover:border-brand-cyan transition flex items-center justify-center h-24">
+                <span class="font-black text-xl text-slate-300 tracking-wider">AMIDIS</span>
+            </div>
+
+            <div class="p-4 bg-slate-800/60 rounded-xl border border-slate-700/50 hover:border-brand-cyan transition flex items-center justify-center h-24">
+                <span class="font-black text-xl text-slate-300 tracking-wider">CLUB</span>
+            </div>
+
+            <div class="p-4 bg-slate-800/60 rounded-xl border border-slate-700/50 hover:border-brand-cyan transition flex items-center justify-center h-24">
+                <span class="font-black text-xl text-slate-300 tracking-wider">PRISTINE</span>
+            </div>
+
+            <div class="p-4 bg-slate-800/60 rounded-xl border border-slate-700/50 hover:border-brand-cyan transition flex items-center justify-center h-24">
+                <span class="font-black text-xl text-slate-300 tracking-wider">RON 88</span>
+            </div>
+
+            <div class="p-4 bg-slate-800/60 rounded-xl border border-slate-700/50 hover:border-brand-cyan transition flex items-center justify-center h-24">
+                <span class="font-black text-xl text-slate-300 tracking-wider">OASIS</span>
+            </div>
+
+            <div class="p-4 bg-slate-800/60 rounded-xl border border-slate-700/50 hover:border-brand-cyan transition flex items-center justify-center h-24">
+                <span class="font-black text-xl text-slate-300 tracking-wider">MOUNTOYA</span>
+            </div>
+
+            <div class="p-4 bg-slate-800/60 rounded-xl border border-slate-700/50 hover:border-brand-cyan transition flex items-center justify-center h-24">
+                <span class="font-black text-xl text-slate-300 tracking-wider">OMBE</span>
+            </div>
+
+            <div class="p-4 bg-slate-800/60 rounded-xl border border-slate-700/50 hover:border-brand-cyan transition flex items-center justify-center h-24">
+                <span class="font-black text-xl text-slate-300 tracking-wider">SIERRA</span>
+            </div>
+
+            <div class="p-4 bg-slate-800/60 rounded-xl border border-slate-700/50 hover:border-brand-cyan transition flex items-center justify-center h-24">
+                <span class="font-black text-xl text-slate-300 tracking-wider">NESTLE</span>
+            </div>
+
+            <div class="p-4 bg-slate-800/60 rounded-xl border border-slate-700/50 hover:border-brand-cyan transition flex items-center justify-center h-24">
+                <span class="font-black text-xl text-slate-300 tracking-wider">AL MA'SOEM</span>
+            </div>
+
+            <div class="p-4 bg-slate-800/60 rounded-xl border border-slate-700/50 hover:border-brand-cyan transition flex items-center justify-center h-24">
+                <span class="font-black text-xl text-slate-300 tracking-wider">CRYSTALINE</span>
+            </div>
+
+            <div class="p-4 bg-slate-800/60 rounded-xl border border-slate-700/50 hover:border-brand-cyan transition flex items-center justify-center h-24">
+                <span class="font-bold text-sm text-brand-cyan">& Mitigation Partners</span>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Media & CSR Section -->
+<section id="media" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-2">Tanggung Jawab Sosial & Berita</h2>
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-brand-navy">Komitmen CSR & Berita Perusahaan</h3>
+            <div class="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- 4 CSR Pillars Card Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+                <div class="w-12 h-12 rounded-full bg-blue-100 text-brand-navy flex items-center justify-center mx-auto text-xl mb-4">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h4 class="font-bold text-slate-800 mb-1">Pendidikan</h4>
+                <p class="text-xs text-slate-600">Program beasiswa dan bantuan sarana belajar bagi sekolah di lingkungan Sukabumi.</p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+                <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-xl mb-4">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+                <h4 class="font-bold text-slate-800 mb-1">Lingkungan</h4>
+                <p class="text-xs text-slate-600">Inisiatif pengelolaan limbah plastik dan penghijauan area pabrik Parung Kuda.</p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+                <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mx-auto text-xl mb-4">
+                    <i class="fa-solid fa-hands-holding-child"></i>
+                </div>
+                <h4 class="font-bold text-slate-800 mb-1">Sosial Masyarakat</h4>
+                <p class="text-xs text-slate-600">Bantuan pasokan air bersih dan kegiatan bakti sosial warga sekitar pabrik.</p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+                <div class="w-12 h-12 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center mx-auto text-xl mb-4">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <h4 class="font-bold text-slate-800 mb-1">Kesehatan</h4>
+                <p class="text-xs text-slate-600">Pemeriksaan kesehatan berkala untuk pekerja dan dukungan posyandu setempat.</p>
+            </div>
+
+        </div>
+
+        <!-- Latest News Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <article class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Sertifikasi Keamanan Pangan" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="text-[10px] uppercase font-bold text-brand-cyan mb-2">Kualitas & Sistem</div>
+                    <h4 class="font-bold text-slate-900 text-base mb-2">Pembaruan Sertifikasi ISO 9001:2015 & Audit SJH</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">PT Oro Plastindo berhasil mempertahankan audit tahunan sistem jaminan mutu tanpa temuan mayor.</p>
+                    <span class="text-[11px] text-slate-400">12 Oktober 2025</span>
+                </div>
+            </article>
+
+            <article class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Peningkatan Kapasitas Produksi" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="text-[10px] uppercase font-bold text-brand-cyan mb-2">Manufaktur</div>
+                    <h4 class="font-bold text-slate-900 text-base mb-2">Peningkatan Lini Otomasi Preform PET High-Speed</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">Pemasangan mesin presisi baru guna memenuhi peningkatan permintaan pasar AMDK nasional.</p>
+                    <span class="text-[11px] text-slate-400">28 Agustus 2025</span>
+                </div>
+            </article>
+
+            <article class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm">
+                <img src="https://images.unsplash.com/photo-1616803140344-6682afb13cda?auto=format&fit=crop&w=600&q=80" alt="Program CSR Sukabumi" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="text-[10px] uppercase font-bold text-brand-cyan mb-2">CSR & Komunitas</div>
+                    <h4 class="font-bold text-slate-900 text-base mb-2">Penyaluran Bantuan Air Bersih Warga Parung Kuda</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">Kegiatan rutin pilar CSR kesehatan dan sosial dalam penyediaan sarana air bersih bagi masyarakat.</p>
+                    <span class="text-[11px] text-slate-400">15 Juni 2025</span>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Career Section -->
+<section id="karir" class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-2">Peluang Karir</h2>
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-brand-navy">Bergabung Bersama PT Oro Plastindo</h3>
+            <div class="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
+            <p class="mt-4 text-slate-600 text-sm">Kembangkan potensi terbaik Anda di lingkungan industri manufaktur profesional.</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto space-y-4">
+            
+            <!-- Job 1 -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-700 font-bold px-2.5 py-1 rounded-full uppercase">Full-Time</span>
+                        <h4 class="font-bold text-slate-900 text-lg mt-2">Operator Produksi Injection & Blow Molding</h4>
+                        <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot text-slate-400 mr-1"></i> Pabrik Parung Kuda, Sukabumi</p>
+                    </div>
+                    <button onclick="openApplyModal('Operator Produksi Injection & Blow Molding')" class="px-5 py-2.5 bg-brand-navy hover:bg-brand-cyan text-white text-xs font-bold rounded-lg transition">
+                        Lamar Sekarang <i class="fa-solid fa-paper-plane ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-700 font-bold px-2.5 py-1 rounded-full uppercase">Full-Time</span>
+                        <h4 class="font-bold text-slate-900 text-lg mt-2">Staff Quality Control (QC) Packaging</h4>
+                        <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot text-slate-400 mr-1"></i> Pabrik Parung Kuda, Sukabumi</p>
+                    </div>
+                    <button onclick="openApplyModal('Staff Quality Control (QC) Packaging')" class="px-5 py-2.5 bg-brand-navy hover:bg-brand-cyan text-white text-xs font-bold rounded-lg transition">
+                        Lamar Sekarang <i class="fa-solid fa-paper-plane ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <span class="text-[10px] bg-blue-100 text-blue-700 font-bold px-2.5 py-1 rounded-full uppercase">Full-Time</span>
+                        <h4 class="font-bold text-slate-900 text-lg mt-2">Sales & Technical Support Specialist</h4>
+                        <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot text-slate-400 mr-1"></i> Kantor Marketing Kemayoran, Jakarta</p>
+                    </div>
+                    <button onclick="openApplyModal('Sales & Technical Support Specialist')" class="px-5 py-2.5 bg-brand-navy hover:bg-brand-cyan text-white text-xs font-bold rounded-lg transition">
+                        Lamar Sekarang <i class="fa-solid fa-paper-plane ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Contact & Locations Section -->
+<section id="kontak" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-xs font-bold text-brand-cyan uppercase tracking-widest mb-2">Hubungi Tim Kami</h2>
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-brand-navy">Kantor & Kontak Perusahaan</h3>
+            <div class="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Contact Form (7 cols) -->
+            <div class="lg:col-span-7 bg-slate-50 p-8 sm:p-10 rounded-3xl border border-slate-200">
+                <h4 class="font-bold text-xl text-slate-900 mb-6">Kirim Pesan & Pertanyaan</h4>
+                
+                <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Nama Lengkap *</label>
+                            <input type="text" required placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-brand-cyan focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Perusahaan / Brand *</label>
+                            <input type="text" required placeholder="Nama Perusahaan" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-brand-cyan focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Email *</label>
+                            <input type="email" required placeholder="email@perusahaan.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-brand-cyan focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Nomor Telepon / WA *</label>
+                            <input type="tel" required placeholder="0812xxxxxxx" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-brand-cyan focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Subjek Pertanyaan</label>
+                        <select class="w-full px-4 py-3 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-brand-cyan focus:outline-none text-slate-700">
+                            <option>Permintaan Penawaran Harga (Sales Quote)</option>
+                            <option>Konsultasi Custom Moulding</option>
+                            <option>Layanan Teknis & Quality</option>
+                            <option>Lainnya</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Pesan *</label>
+                        <textarea rows="4" required placeholder="Tuliskan spesifikasi produk atau pesan Anda..." class="w-full px-4 py-3 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-brand-cyan focus:outline-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-brand-navy hover:bg-brand-cyan text-white text-xs font-bold uppercase tracking-wider rounded-xl transition shadow-md">
+                        Kirim Pesan Sekarang <i class="fa-solid fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Location Cards (5 cols) -->
+            <div class="lg:col-span-5 space-y-6">
+                
+                <!-- Factory Sukabumi -->
+                <div class="bg-slate-900 text-white p-8 rounded-3xl relative overflow-hidden">
+                    <span class="text-[10px] bg-brand-cyan text-white font-bold px-3 py-1 rounded-full uppercase tracking-wider">Kantor Pusat & Pabrik</span>
+                    <h4 class="font-extrabold text-xl mt-4 mb-2">Sukabumi - Jawa Barat</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                        <i class="fa-solid fa-location-dot text-brand-cyan mr-1.5"></i> Jl. Cidahu No. 68 Kp. Pondokkaso, Babakanjaya, Parung Kuda, Sukabumi 43357
+                    </p>
+                    <div class="space-y-1.5 text-xs text-slate-300 pt-3 border-t border-slate-800">
+                        <p><i class="fa-solid fa-phone text-brand-cyan mr-2"></i> (0266) 6721388</p>
+                        <p><i class="fa-solid fa-envelope text-brand-cyan mr-2"></i> legal@oroplastindo.com</p>
+                    </div>
+                </div>
+
+                <!-- Marketing Office Jakarta -->
+                <div class="bg-brand-navy text-white p-8 rounded-3xl relative overflow-hidden">
+                    <span class="text-[10px] bg-brand-cyan text-white font-bold px-3 py-1 rounded-full uppercase tracking-wider">Kantor Marketing</span>
+                    <h4 class="font-extrabold text-xl mt-4 mb-2">Kemayoran - Jakarta Pusat</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                        <i class="fa-solid fa-location-dot text-brand-cyan mr-1.5"></i> The Mansion, Jl. Trembesi Blok D4, Tower Fontana Lt. 51 H1-I1, Kemayoran, Jakarta Pusat
+                    </p>
+                    <div class="space-y-1.5 text-xs text-slate-300 pt-3 border-t border-slate-800">
+                        <p><i class="fa-solid fa-envelope text-brand-cyan mr-2"></i> sales2@oroplastindo.com</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-brand-dark text-white border-t border-slate-800 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+            
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-md bg-brand-cyan flex items-center justify-center font-black text-white text-sm">OP</div>
+                    <span class="font-extrabold text-lg tracking-wider">ORO PLASTINDO</span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Manufaktur kemasan plastik primer terkemuka untuk produk air minum dalam kemasan (AMDK) berstandar internasional.
+                </p>
+            </div>
+
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4">Navigasi Cepat</h5>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li><a href="#tentang" class="hover:text-white transition">Tentang Kami</a></li>
+                    <li><a href="#produk" class="hover:text-white transition">Katalog Produk</a></li>
+                    <li><a href="#manajemen" class="hover:text-white transition">Sistem Keamanan & ISO</a></li>
+                    <li><a href="#media" class="hover:text-white transition">Media & CSR</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4">Portofolio Produk</h5>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li>PET Preforms AMDK</li>
+                    <li>Tutup Botol HDPE (Closure)</li>
+                    <li>Galon Polycarbonate (PC) 19L</li>
+                    <li>Tutup Galon PE Hygienic</li>
+                    <li>Botol PET Ready 600ml</li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-4">Sertifikasi & Layanan</h5>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="text-[10px] bg-slate-800 text-slate-300 px-2.5 py-1 rounded">ISO 9001:2015</span>
+                    <span class="text-[10px] bg-slate-800 text-slate-300 px-2.5 py-1 rounded">SJH Halal</span>
+                    <span class="text-[10px] bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Food Grade</span>
+                </div>
+                <p class="text-xs text-slate-400"><i class="fa-solid fa-headset mr-1"></i> Technical Field Support Available</p>
+            </div>
+
+        </div>
+
+        <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+            <p>© 2026 PT Oro Plastindo. Hak Cipta Dilindungi Undang-Undang.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-slate-300 transition">Kebijakan Privasi</a>
+                <a href="#" class="hover:text-slate-300 transition">Syarat & Ketentuan</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<!-- Product Specification Modal Dialog -->
+<div id="product-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-8 relative modal-animate max-h-[90vh] overflow-y-auto">
+        <button onclick="closeProductModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-800 text-xl focus:outline-none">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div id="modal-content">
+            <!-- Dynamic Content Injected via JS -->
+        </div>
+    </div>
+</div>
+
+<!-- Career Application Modal Dialog -->
+<div id="career-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-8 relative modal-animate">
+        <button onclick="closeApplyModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-800 text-xl focus:outline-none">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        
+        <h4 class="font-extrabold text-slate-900 text-xl mb-1">Formulir Lamaran Pekerjaan</h4>
+        <p id="career-modal-title" class="text-xs text-brand-cyan font-bold mb-6"></p>
+
+        <form onsubmit="handleCareerSubmit(event)" class="space-y-4">
+            <div>
+                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Nama Lengkap *</label>
+                <input type="text" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-brand-cyan focus:outline-none">
+            </div>
+            <div>
+                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Email *</label>
+                <input type="email" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-brand-cyan focus:outline-none">
+            </div>
+            <div>
+                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Nomor Telepon / WhatsApp *</label>
+                <input type="tel" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-brand-cyan focus:outline-none">
+            </div>
+            <div>
+                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Tautan Resume / CV (Google Drive/LinkedIn) *</label>
+                <input type="url" required placeholder="https://..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-xs focus:ring-2 focus:ring-brand-cyan focus:outline-none">
+            </div>
+            <button type="submit" class="w-full py-3 bg-brand-navy hover:bg-brand-cyan text-white text-xs font-bold uppercase tracking-wider rounded-xl transition mt-4">
+                Kirim Lamaran
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Custom Message Banner Container -->
+<div id="toast-message" class="fixed bottom-6 right-6 z-50 hidden bg-brand-navy text-white px-6 py-4 rounded-2xl shadow-2xl border border-brand-cyan flex items-center space-x-3 text-xs">
+    <i class="fa-solid fa-circle-check text-brand-cyan text-lg"></i>
+    <span id="toast-text">Pesan berhasil dikirim!</span>
+</div>
+
+<!-- Interactivity JavaScript -->
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('#hero-slider .slide');
+    const dots = document.querySelectorAll('.slide-dot');
+
+    function changeSlide(index) {
+        slides[currentSlide].classList.remove('opacity-100');
+        slides[currentSlide].classList.add('opacity-0');
+        dots[currentSlide].classList.remove('bg-white');
+        dots[currentSlide].classList.add('bg-white/40');
+
+        currentSlide = index;
+
+        slides[currentSlide].classList.remove('opacity-0');
+        slides[currentSlide].classList.add('opacity-100');
+        dots[currentSlide].classList.remove('bg-white/40');
+        dots[currentSlide].classList.add('bg-white');
+    }
+
+    setInterval(() => {
+        let nextSlide = (currentSlide + 1) % slides.length;
+        changeSlide(nextSlide);
+    }, 6000);
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.className = 'fa-solid fa-bars';
+        } else {
+            menuIcon.className = 'fa-solid fa-xmark';
+        }
+    });
+
+    let countersStarted = false;
+    const counterElements = document.querySelectorAll('.counter');
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !countersStarted) {
+                countersStarted = true;
+                counterElements.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    let count = 0;
+                    const speed = target / 40;
+                    const updateCount = () => {
+                        count += speed;
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count);
+                            setTimeout(updateCount, 40);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+
+    counterObserver.observe(document.querySelector('.counter-card'));
+
+    function filterProducts(category) {
+        const items = document.querySelectorAll('.product-item');
+        const buttons = document.querySelectorAll('.prod-tab-btn');
+
+        buttons.forEach(btn => {
+            if (btn.getAttribute('data-category') === category) {
+                btn.className = 'prod-tab-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-navy text-white transition shadow-sm';
+            } else {
+                btn.className = 'prod-tab-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-slate-700 hover:bg-slate-200 transition border border-slate-200';
+            }
+        });
+
+        items.forEach(item => {
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    const productData = {
+        'preform': {
+            title: 'PET Preform Standard AMDK',
+            image: 'https://images.unsplash.com/photo-1527100673774-cce25eafaf7f?auto=format&fit=crop&w=600&q=80',
+            desc: 'Preform berbahan dasar PET murni kelas kontak makanan. Dirancang dengan mendistribusikan resin secara presisi untuk efisiensi pemrosesan blow molding.',
+            specs: [
+                { label: 'Material', val: 'Polyethylene Terephthalate (PET)' },
+                { label: 'Opsi Berat', val: '12.5g, 14g, 28g, 32g, 35g' },
+                { label: 'Standar Neck Finish', val: 'PCO 1881 / 30/25 Neck' },
+                { label: 'Sertifikasi', val: 'Food Grade, Halal SJH, ISO 9001' }
+            ]
+        },
+        'closure': {
+            title: 'Plastic Closure (Tutup Botol HDPE)',
+            image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80',
+            desc: 'Tutup botol HDPE berkualitas tinggi dengan cincin tamper-evident yang putus dengan sempurna saat dibuka pertama kali.',
+            specs: [
+                { label: 'Material', val: 'High-Density Polyethylene (HDPE)' },
+                { label: 'Ukuran Standard', val: '28mm & 30mm Neck' },
+                { label: 'Fitur', val: 'Tamper Evident Band, Zero-Leak Inner Seal' },
+                { label: 'Aplikasi', val: 'Air Minum Dalam Kemasan (AMDK)' }
+            ]
+        },
+        'galon': {
+            title: 'Galon Polycarbonate (PC) 19 Liter',
+            image: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4e?auto=format&fit=crop&w=600&q=80',
+            desc: 'Kemasan galon 5 galon berdaya tahan tinggi, dirancang khusus untuk pemakaian berulang (refill) tanpa mengurangi kejernihan dan kekuatan mekanis.',
+            specs: [
+                { label: 'Material', val: 'Polycarbonate (PC) Virgin Grade' },
+                { label: 'Kapasitas Volume', val: '19 Litres (5 Gallon)' },
+                { label: 'Keunggulan', val: 'Kekuatan Benturan Tinggi & Kejernihan Optik' },
+                { label: 'Standar', val: 'Kemasan Pangan AMDK' }
+            ]
+        },
+        'tutup-galon': {
+            title: 'Tutup Galon Injection PE',
+            image: 'https://images.unsplash.com/photo-1589365278144-c9e705f843ba?auto=format&fit=crop&w=600&q=80',
+            desc: 'Tutup galon lentur dan kuat dengan segel kedap untuk perlindungan sempurna dari kontaminasi eksternal.',
+            specs: [
+                { label: 'Material', val: 'Linear Low-Density Polyethylene (LLDPE)' },
+                { label: 'Pilihan Warna', val: 'Biru, Hijau, Merah (Custom)' },
+                { label: 'Segel Internal', val: 'Foam Sealing Non-toxic' }
+            ]
+        },
+        'botol': {
+            title: 'Botol PET Ready-to-Use 600ml',
+            image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80',
+            desc: 'Botol bening siap pakai yang diproduksi melalui proses stretch blow molding modern.',
+            specs: [
+                { label: 'Material', val: 'PET Polyethylene Terephthalate' },
+                { label: 'Volume', val: '600ml (Desain Custom Tersedia)' },
+                { label: 'Top-Load Pressure', val: 'Diuji untuk Standar Pengangkutan' }
+            ]
+        }
+    };
+
+    function openProductModal(key) {
+        const item = productData[key];
+        if (!item) return;
+
+        let specsHtml = item.specs.map(s => `
+            <div class="flex justify-between py-2 border-b border-slate-100 text-xs">
+                <span class="font-bold text-slate-700">${s.label}:</span>
+                <span class="text-slate-600">${s.val}</span>
+            </div>
+        `).join('');
+
+        document.getElementById('modal-content').innerHTML = `
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <img src="${item.image}" class="w-full md:w-1/2 h-56 object-cover rounded-2xl bg-slate-100">
+                <div class="w-full md:w-1/2">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-brand-cyan">Spesifikasi Teknis</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-1 mb-3">${item.title}</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-4">${item.desc}</p>
+                    <div class="bg-slate-50 p-4 rounded-xl mb-4 border border-slate-100">${specsHtml}</div>
+                    <a href="#kontak" onclick="closeProductModal()" class="block text-center py-3 bg-brand-navy text-white text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-brand-cyan transition">Minta Penawaran Kuantitas</a>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('product-modal').classList.remove('hidden');
+    }
+
+    function closeProductModal() {
+        document.getElementById('product-modal').classList.add('hidden');
+    }
+
+    function openApplyModal(jobTitle) {
+        document.getElementById('career-modal-title').innerText = 'Posisi: ' + jobTitle;
+        document.getElementById('career-modal').classList.remove('hidden');
+    }
+
+    function closeApplyModal() {
+        document.getElementById('career-modal').classList.add('hidden');
+    }
+
+    function showToast(msg) {
+        const toast = document.getElementById('toast-message');
+        document.getElementById('toast-text').innerText = msg;
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+            toast.classList.add('hidden');
+        }, 4000);
+    }
+
+    function handleFormSubmit(e) {
+        e.preventDefault();
+        showToast('Pesan Anda berhasil dikirim ke Tim Sales & Marketing!');
+        e.target.reset();
+    }
+
+    function handleCareerSubmit(e) {
+        e.preventDefault();
+        closeApplyModal();
+        showToast('Lamaran Anda telah diterima oleh HRD PT Oro Plastindo!');
+        e.target.reset();
+    }
+
+    function setLanguage(lang) {
+        if (lang === 'EN') {
+            document.getElementById('lang-id').className = 'hover:text-brand-cyan transition text-slate-400';
+            document.getElementById('lang-en').className = 'font-bold text-white hover:text-brand-cyan transition underline underline-offset-4';
+            showToast('Language set to English (Simulation Mode)');
+        } else {
+            document.getElementById('lang-en').className = 'hover:text-brand-cyan transition text-slate-400';
+            document.getElementById('lang-id').className = 'font-bold text-white hover:text-brand-cyan transition underline underline-offset-4';
+            showToast('Bahasa diubah ke Bahasa Indonesia');
+        }
+    }
+</script>
+
+</body>
+</html>
